@@ -18,7 +18,7 @@ export const tabs: ITabs[] = [
   },
   {
     name: 'contact',
-    label: '',
+    label: 'Contato',
     path: '#contact',
   },
 ]
