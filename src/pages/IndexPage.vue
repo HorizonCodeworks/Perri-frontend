@@ -1,21 +1,9 @@
 <style scoped>
 
-h1 {
+.text-h1 {
   text-align: center;
   margin-top: 9rem;
-  margin-bottom: 2rem;
-  font-size: 8vw; /* Tamanho da fonte baseado na largura da tela */
-  font-family: ville, sans-serif;
-  color: White;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-h1:hover {
-  color: #386cab;
-  transform: scale(1.05);
+  background: transparent;
 }
 
 h2 {
