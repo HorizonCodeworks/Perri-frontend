@@ -2,6 +2,10 @@
   <router-view />
 </template>
 
-<script setup lang="ts">
-//
-</script>
+<style>
+ body{
+  background-color: black;
+ }
+</style>
+
+<script setup lang="ts"></script>
