@@ -27,19 +27,25 @@ defineProps({
 
 /* Estilos do botão */
 .button-style {
-  border-color: white;
-  background: black;
-  border-radius: 50px; /* Arredondamento das bordas */
-  padding: 5px; /* Ajuste de espaçamento interno */
-  font-size: 16px; /* Tamanho da fonte */
+  background: black; /* Fundo */
   color: white; /* Cor do texto */
+  border: 2px solid white; /* Contorno */
+  border-radius: 50px; /* Bordas menos arredondadas */
+  padding: 10px 16px; /* Espaçamento interno mais ajustado */
+  font-size: 14px; /* Texto proporcional */
+  font-weight: bold; /* Deixa o texto mais destacado */
   cursor: pointer;
-  height: auto;
-  transition: all 0.3s ease; /* Suavização para interações */
+  text-align: center;
+  min-width: 120px; /* Define uma largura mínima */
+  max-width: 200px; /* Define uma largura máxima */
+  transition: all 0.3s ease; /* Animações suaves */
 }
 
 /* Efeito hover */
 .button-style:hover {
+  color: black;
+  border-color: black;
+  background-color: white; /* Cor de fundo ao passar o mouse */
   opacity: 0.8; /* Transparência no hover */
 }
 
