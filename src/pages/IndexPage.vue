@@ -3,14 +3,14 @@
     <!-- Nova seção com imagem, título e botões -->
     <div class="hero-section">
       <!-- Overlay para adicionar o efeito escuro sobre a imagem -->
-      <div class="overlay">
-        <div class="hero-content q-my-xl">
+      <div class="full-width ">
+        <div class="hero-content q-my-xl q-pa-lg">
           <!-- Título principal -->
-          <h1>Perri Construções</h1>
+          <div class="text-h2 text-center">Perri Construções</div>
           <!-- Subtítulo -->
-          <p>Construindo Sonhos</p>
+          <div class="text-body1 q-mb-md">Construindo Sonhos</div>
           <!-- Contêiner para os botões -->
-          <div class="button-container">
+          <div class="button-container" id="services">
             <!-- Botão "Serviços" com link para a página de serviços -->
             <q-btn
               label="Serviços"
