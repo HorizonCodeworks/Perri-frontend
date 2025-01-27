@@ -20,53 +20,50 @@
     </section>
 
     <!-- on hover content -->
-    <section class="full-width bg-secondary row" v-if="hoverContent">
-      <div class="col-6 q-pa-md text-white">
-        <div class="text-h3 text-center">{{ content?.content.title }}</div>
-        <br />
-        <div class="text-h5 q-pa-md">
-          {{ content?.content.textExplanation }}
-        </div>
+  <section class="full-width bg-secondary row q-pa-md" v-if="hoverContent">
+    <div class="col-12 col-md-6 text-white q-pa-lg flex flex-center flex-column">
+      <div class="text-h3 text-center">{{ content?.content.title }}</div>
+      <br />
+      <div class="text-h5 text-center q-mt-md">
+        {{ content?.content.textExplanation }}
       </div>
-      <div class="col-6 q-pa-lg text-center items-center">
-        <q-img :src="content?.content.img" class="rounded-borders" />
-      </div>
-    </section>
+    </div>
+    <div class="col-12 col-md-6 q-pa-lg flex flex-center">
+      <q-img :src="content?.content.img" class="rounded-borders shadow-2xl" />
+    </div>
+  </section>
 
-    <main class="q-mt-xl q-mb-md">
+    <main class="q-mb-md q-pa-md" style="margin-top: 100px;">
       <div class="text-h3 text-white q-mt-lg q-mb-xl q-pa-md text-center">Portfólio</div>
-      <section class="full-width row justify-around items-center flex-wrap q-md-lg">
+      <section class="full-width row justify-around items-center flex-wrap q-gutter-lg">
         <CardComponent
           v-for="(i, index) in card_teste"
           :key="index"
           :title="i.title"
           :subtitle="i.subtitle"
-          class="q-mt-md cursor-pointer"
+          class="q-mt-md cursor-pointer shadow-2xl hover-scale"
           @click="goTo(i.id)"
         />
       </section>
 
-      <!-- projetos 3D -->
-      <section class="row q-mt-xl q-mb-xl">
-        <div class="col-3">
-          <div
-            class="text-center text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm"
-          >
+      <!-- Projetos 3D -->
+      <section class="q-mt-xl q-mb-xl" style="margin-top: 100px;">
+        <div class="row justify-center q-mb-lg">
+          <div class="text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm">
             Projetos 3D
           </div>
         </div>
-        <div class="col-12 q-pa-md q-mb-xl row q-gutter-md">
+        <div class="row q-gutter-md justify-around">
+          <CardComponent v-for="n in 4" :key="n" class="col-12 col-md-5 col-lg-3 shadow-2xl" />
         </div>
 
-        <div class="col-3">
-          <div
-            class="text-center text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm"
-          >
+        <div class="row justify-center q-mt-xl q-mb-lg" style="margin-top: 100px;">
+          <div class="text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm">
             Construções e reformas
           </div>
         </div>
-        <div class="col-12 q-pa-md row q-gutter-md">
-          <CardComponent />
+        <div class="row q-gutter-md justify-around">
+          <CardComponent v-for="n in 4" :key="n" class="col-12 col-md-5 col-lg-3 shadow-2xl" />
         </div>
       </section>
     </main>
@@ -81,7 +78,7 @@ import type { IIcons } from 'src/interfaces/IIcons'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 
-const router = useRouter();
+const router = useRouter()
 
 const hoverContent = ref<boolean>(false)
 
@@ -93,6 +90,6 @@ const onHoverEvent = (data: IIcons) => {
 }
 
 const goTo = (id: string | number) => {
-  return router.push({path: `services/${id}`, replace: true})
+  return router.push({ path: `services/${id}`, replace: true })
 }
 </script>
