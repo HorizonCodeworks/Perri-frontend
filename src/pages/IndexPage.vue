@@ -1,9 +1,9 @@
 <template>
   <q-page>
     <q-page-sticky position="bottom-left" :offset="[18, 18]" style="z-index: 999">
-      <q-btn fab icon="call" color="green" />
+      <q-btn fab icon="fa-brands fa-whatsapp" color="green" />
     </q-page-sticky>
-    <div class="text-h3 text-white q-mt-lg q-pa-md">Serviços</div>
+    <div class="text-h2 text-white q-mt-lg q-pa-md text-weight-bolder">Serviços</div>
     <section class="full-width bg-secondary row justify-around items-center q-pa-xl">
       <div class="column items-center text-center q-mx-md" v-for="i in ServicesConfig" :key="i.id">
         <q-btn
@@ -41,7 +41,8 @@
           :key="index"
           :title="i.title"
           :subtitle="i.subtitle"
-          class="q-mt-md"
+          class="q-mt-md cursor-pointer"
+          @click="goTo(i.id)"
         />
       </section>
 
@@ -66,7 +67,6 @@
         </div>
         <div class="col-12 q-pa-md row q-gutter-md">
           <CardComponent />
-          <CardComponent />
         </div>
       </section>
     </main>
@@ -78,12 +78,21 @@ import CardComponent from 'src/components/Basic/CardComponent.vue'
 import { card_teste } from './IndexConfigs/CardConfig'
 import { ServicesConfig } from './IndexConfigs/ServicesConfig'
 import type { IIcons } from 'src/interfaces/IIcons'
+import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 
+const router = useRouter();
+
 const hoverContent = ref<boolean>(false)
+
 const content = ref<IIcons | null>(null)
+
 const onHoverEvent = (data: IIcons) => {
   hoverContent.value = true
   content.value = data
+}
+
+const goTo = (id: string | number) => {
+  return router.push({path: `services/${id}`, replace: true})
 }
 </script>
