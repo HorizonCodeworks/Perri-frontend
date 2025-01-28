@@ -1,5 +1,36 @@
 <template>
-  <q-page>
+  <q-page class="bg-dark text-white">
+    <!-- Nova seção com imagem, título e botões -->
+    <div class="hero-section">
+      <!-- Overlay para adicionar o efeito escuro sobre a imagem -->
+      <div class="full-width ">
+        <div class="hero-content q-my-xl q-pa-lg">
+          <!-- Título principal -->
+          <div class="text-h2 text-center">Perri Construções</div>
+          <!-- Subtítulo -->
+          <div class="text-body1 q-mb-md">Construindo Sonhos</div>
+          <!-- Contêiner para os botões -->
+          <div class="button-container" id="services">
+            <!-- Botão "Serviços" com link para a página de serviços -->
+            <q-btn
+              label="Serviços"
+              to="/servicos"
+              color="accent"
+              class="q-mr-sm"
+              outline
+            />
+            <!-- Botão "Solicitar Orçamento" com link para a página de orçamento -->
+            <q-btn
+              label="Solicitar Orçamento"
+              to="/orcamento"
+              color="accent"
+              outline
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <q-page-sticky position="bottom-left" :offset="[18, 18]" style="z-index: 999">
       <q-btn fab icon="fa-brands fa-whatsapp" color="green" />
     </q-page-sticky>
@@ -93,3 +124,67 @@ const goTo = (id: string | number) => {
   return router.push({ path: `services/${id}`, replace: true })
 }
 </script>
+
+
+<style scoped>
+/* Estilo da nova seção (imagem com título e botões) */
+.hero-section {
+  /* Substitua pelo caminho correto da sua imagem */
+  background: url('public/img/HeroSection.svg') center center / cover no-repeat;
+  height: 80vh; /* Altura da seção */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white; /* Cor do texto */
+  font-family: 'Lalezar', sans-serif;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente sobre a imagem */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-content {
+  text-align: center; /* Centraliza o texto */
+  z-index: 1; /* Garante que o conteúdo esteja acima da overlay */
+}
+
+.hero-content h1 {
+  font-size: 3rem; /* Tamanho do título principal */
+  margin-bottom: 10px;
+  font-family: 'Lalezar', sans-serif;
+}
+
+.hero-content p {
+  font-size: 2rem; /* Tamanho do subtítulo */
+  margin-bottom: 20px;
+  font-family: 'Lalezar', sans-serif;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os botões */
+  justify-content: center; /* Centraliza os botões */
+}
+
+/* Estilo da seção de serviços */
+.services-section {
+  padding: 2rem; /* Espaçamento interno da seção */
+  font-family: 'Lalezar', sans-serif;
+}
+
+.text-center {
+  text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo adicional para os botões (se necessário) */
+.q-btn {
+  border-radius: 50px; /* Cantos arredondados */
+  font-family: 'Lalezar', sans-serif;
+}
+</style>
