@@ -36,7 +36,7 @@ const openDrawer = ref<boolean>(false)
       <router-view />
     </q-page-container>
 
-    <footer class="bg-dark text-white">
+    <footer class="bg-dark text-white q-mt-xl" style="z-index: 999">
       <div class="q-pa-md">
         <div class="row justify-between">
           <!-- Logo e Direitos Autorais -->
