@@ -4,21 +4,21 @@ export const tabs: ITabs[] = [
   {
     name: 'home',
     label: 'Home',
-    path: '#home',
+    path: '/',
   },
   {
     name: 'services',
     label: 'Serviços',
-    path: '#services',
+    path: 'services',
   },
   {
     name: 'aboutUs',
     label: 'Sobre nós',
-    path: '#aboutus',
+    path: 'about',
   },
   {
     name: 'contact',
     label: 'Contato',
-    path: '#contact',
+    path: 'contact',
   },
 ]
