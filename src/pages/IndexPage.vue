@@ -30,79 +30,103 @@
         </div>
       </div>
     </div>
-
-    <!-- Seção de serviços existente -->
-    <div class="services-section q-pa-xl">
-      <!-- Título da seção -->
-      <h3 class="text-center">Serviços</h3>
-      <div class="row justify-around q-mt-md">
-        <!-- Loop para renderizar os serviços dinamicamente -->
-        <ServiceItem
-          v-for="(service, index) in services"
-          :key="service.title"
-          :icon="service.icon"
-          :title="service.title"
-          :description="service.description"
-          :image="service.image"
+    
+    <q-page-sticky position="bottom-left" :offset="[18, 18]" style="z-index: 999">
+      <q-btn fab icon="fa-brands fa-whatsapp" color="green" />
+    </q-page-sticky>
+    <div class="text-h2 text-white q-mt-lg q-pa-md text-weight-bolder">Serviços</div>
+    <section class="full-width bg-secondary row justify-around items-center q-pa-xl">
+      <div class="column items-center text-center q-mx-md" v-for="i in ServicesConfig" :key="i.id">
+        <q-btn
+          size="25px"
+          round
+          :icon="i.icon"
+          :text-color="i.text_color"
+          class="bg-primary"
+          @mouseover="onHoverEvent(i)"
+          @mouseout="hoverContent = false"
         />
+        <span class="text-h6 text-weight-bold text-white q-mt-sm text-center">{{ i.label }}</span>
+      </div>
+    </section>
+
+    <!-- on hover content -->
+  <section class="full-width bg-secondary row q-pa-md" v-if="hoverContent">
+    <div class="col-12 col-md-6 text-white q-pa-lg flex flex-center flex-column">
+      <div class="text-h3 text-center">{{ content?.content.title }}</div>
+      <br />
+      <div class="text-h5 text-center q-mt-md">
+        {{ content?.content.textExplanation }}
       </div>
     </div>
+    <div class="col-12 col-md-6 q-pa-lg flex flex-center">
+      <q-img :src="content?.content.img" class="rounded-borders shadow-2xl" />
+    </div>
+  </section>
+
+    <main class="q-mb-md q-pa-md" style="margin-top: 100px;">
+      <div class="text-h3 text-white q-mt-lg q-mb-xl q-pa-md text-center">Portfólio</div>
+      <section class="full-width row justify-around items-center flex-wrap q-gutter-lg">
+        <CardComponent
+          v-for="(i, index) in card_teste"
+          :key="index"
+          :title="i.title"
+          :subtitle="i.subtitle"
+          class="q-mt-md cursor-pointer shadow-2xl hover-scale"
+          @click="goTo(i.id)"
+        />
+      </section>
+
+      <!-- Projetos 3D -->
+      <section class="q-mt-xl q-mb-xl" style="margin-top: 100px;">
+        <div class="row justify-center q-mb-lg">
+          <div class="text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm">
+            Projetos 3D
+          </div>
+        </div>
+        <div class="row q-gutter-md justify-around">
+          <CardComponent v-for="n in 4" :key="n" class="col-12 col-md-5 col-lg-3 shadow-2xl" />
+        </div>
+
+        <div class="row justify-center q-mt-xl q-mb-lg" style="margin-top: 100px;">
+          <div class="text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm">
+            Construções e reformas
+          </div>
+        </div>
+        <div class="row q-gutter-md justify-around">
+          <CardComponent v-for="n in 4" :key="n" class="col-12 col-md-5 col-lg-3 shadow-2xl" />
+        </div>
+      </section>
+    </main>
   </q-page>
 </template>
 
-<script>
-import ServiceItem from 'components/ServiceItem.vue'; // Importa o componente ServiceItem
+<script setup lang="ts">
+import CardComponent from 'src/components/Basic/CardComponent.vue'
+import { card_teste } from './IndexConfigs/CardConfig'
+import { ServicesConfig } from './IndexConfigs/ServicesConfig'
+import type { IIcons } from 'src/interfaces/IIcons'
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
 
-export default {
-  components: {
-    ServiceItem, // Declara o componente para uso
-  },
-  data() {
-    return {
-      // Lista de serviços para exibição dinâmica
-      services: [
-        {
-          //projeto-3D
-          icon: 'public/icons/Project-icon.png', // Ícone do serviço (opcional)
-          title: 'Projetos 3D', // Título do serviço
-          description:
-            'Damos vida às suas ideias com projetos 3D de alta precisão, riqueza de detalhes e um nível de personalização que atende às suas necessidades específicas. Utilizamos as melhores ferramentas de modelagem e visualização para criar representações realistas e funcionais, garantindo um planejamento eficiente que permite ajustes em tempo real e promove total transparência em cada etapa. Nossa expertise está focada em transformar sua visão em realidade, com qualidade excepcional, segurança garantida e um processo livre de surpresas, fornecendo a confiança necessária para o sucesso do seu projeto.', // Descrição do serviço
-          image: 'img/img-projeto-3D.svg', // Caminho para a imagem do serviço
-        },
-        {
-          //Serviços Técnicos
-          icon: 'icons/engineer-icon1.png',
-          title: 'Serviços Técnicos',
-          description:
-            'Cuidamos de toda a regularização do seu empreendimento, oferecendo um serviço completo que inclui a emissão de ARTs, realização de vistorias previstas e gerenciamento de todos os processos burocráticos necessários. Nosso objetivo é garantir eficiência, conformidade e sua tranquilidade em cada etapa do projeto.',
-          image: 'path/to/servicos_tecnicos.jpg',
-        },
-        {
-          //Entrega de Chaves
-          icon: 'public/icons/Key-icon.png',
-          title: 'Entrega de Chaves',
-          description:
-            'Realizamos uma avaliação completa e minuciosa para a entrega de obras, garantindo que cada detalhe do projeto seja finalizado com excelência e dentro dos mais altos padrões de qualidade. Nosso compromisso é garantir sua total satisfação em todas as etapas do processo, oferecendo segurança, transparência e resultados',
-          image: 'path/to/entrega_chaves.jpg',
-        },
-        {
-          //Construção & Reformas
-          icon: 'public/icons/house.png',
-          title: 'Construção & Reformas',
-          description:
-            'Oferecemos serviços realizados com total responsabilidade, precisão e um atendimento que prioriza suas necessidades e expectativas. Nosso objetivo é transformar sua casa ou apartamento em um espaço que reflita seu estilo e personalidade, combinando modernidade, conforto e funcionalidade. Com atenção a cada detalhe, garantimos soluções personalizadas e de alta qualidade, sempre trabalhando com compromisso e dedicação para entregar resultados que superem suas expectativas e proporcionem uma experiência',
-          image: 'path/to/construcao_reformas.jpg',
-        },
-      ],
-    };
-  },
-};
+const router = useRouter()
+
+const hoverContent = ref<boolean>(false)
+
+const content = ref<IIcons | null>(null)
+
+const onHoverEvent = (data: IIcons) => {
+  hoverContent.value = true
+  content.value = data
+}
+
+const goTo = (id: string | number) => {
+  return router.push({ path: `services/${id}`, replace: true })
+}
 </script>
 
-<style scoped>
-/* Importação da fonte Lalezar ou uma similar */
-@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
 
+<style scoped>
 /* Estilo da nova seção (imagem com título e botões) */
 .hero-section {
   /* Substitua pelo caminho correto da sua imagem */

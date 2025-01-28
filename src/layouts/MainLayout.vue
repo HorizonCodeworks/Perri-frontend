@@ -17,8 +17,8 @@ const openDrawer = ref<boolean>(false)
         </q-tabs>
         <q-space />
         <div class="row items-center justify-center">
-          <q-icon name="call" class="q-mr-md" size="20px" />
-          <div class="text-body text-weight-bolder">(11) 95954-7384</div>
+          <q-icon name="fa-brands fa-whatsapp" class="q-mr-md cursor-pointer" size="25px" />
+          <q-icon name="fa-brands fa-instagram" class="q-mr-md cursor-pointer" size="25px" />
         </div>
       </q-toolbar>
 
@@ -37,4 +37,3 @@ const openDrawer = ref<boolean>(false)
     </q-page-container>
   </q-layout>
 </template>
-  
