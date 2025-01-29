@@ -3,7 +3,7 @@
     <!-- Nova seção com imagem, título e botões -->
     <div class="hero-section">
       <!-- Overlay para adicionar o efeito escuro sobre a imagem -->
-      <div class="full-width ">
+      <div class="full-width">
         <div class="hero-content q-my-xl q-pa-lg">
           <!-- Título principal -->
           <div class="text-h2 text-center">Perri Construções</div>
@@ -26,8 +26,15 @@
     <div class="text-h2 text-white q-mt-lg q-pa-md text-weight-bolder">Serviços</div>
     <section class="full-width bg-secondary row justify-around items-center q-pa-xl">
       <div class="column items-center text-center q-mx-md" v-for="i in ServicesConfig" :key="i.id">
-        <q-btn size="25px" round :icon="i.icon" :text-color="i.text_color" class="bg-primary"
-          @mouseover="onHoverEvent(i)" @mouseout="hoverContent = false" />
+        <q-btn
+          size="25px"
+          round
+          :icon="i.icon"
+          :text-color="i.text_color"
+          class="bg-primary"
+          @mouseover="onHoverEvent(i)"
+          @mouseout="hoverContent = false"
+        />
         <span class="text-h6 text-weight-bold text-white q-mt-sm text-center">{{ i.label }}</span>
       </div>
     </section>
@@ -46,15 +53,21 @@
       </div>
     </section>
 
-    <main class="q-mb-md q-pa-md" style="margin-top: 100px;">
+    <main class="q-mb-md q-pa-md" style="margin-top: 100px">
       <div class="text-h3 text-white q-mt-lg q-mb-xl q-pa-md text-center">Portfólio</div>
       <section class="full-width row justify-around items-center flex-wrap q-gutter-lg">
-        <CardComponent v-for="(i, index) in card_teste" :key="index" :title="i.title" :subtitle="i.subtitle"
-          class="q-mt-md cursor-pointer shadow-2xl hover-scale" @click="goTo(i.id)" />
+        <CardComponent
+          v-for="(i, index) in card_teste"
+          :key="index"
+          :title="i.title"
+          :subtitle="i.subtitle"
+          class="q-mt-md cursor-pointer shadow-2xl hover-scale"
+          @click="goTo(i.id)"
+        />
       </section>
 
       <!-- Projetos 3D -->
-      <section class="q-mt-xl q-mb-xl" style="margin-top: 100px;">
+      <section class="q-mt-xl q-mb-xl" style="margin-top: 100px">
         <div class="row justify-center q-mb-lg">
           <div class="text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm">
             Projetos 3D
@@ -64,7 +77,7 @@
           <CardComponent v-for="n in 4" :key="n" class="col-12 col-md-5 col-lg-3 shadow-2xl" />
         </div>
 
-        <div class="row justify-center q-mt-xl q-mb-lg" style="margin-top: 100px;">
+        <div class="row justify-center q-mt-xl q-mb-lg" style="margin-top: 100px">
           <div class="text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm">
             Construções e reformas
           </div>
@@ -78,47 +91,61 @@
     <section>
       <!-- Seção: Sobre a Empresa -->
       <div class="q-pa-lg flex flex-center">
-        <div class="row" style="max-width: 1200px; align-items: center;">
+        <div class="row" style="max-width: 1200px; align-items: center">
           <!-- Logotipo -->
           <div class="col-4 flex flex-center">
-            <q-img src="public/img/Foto Nossos serviços.svg" style="max-width: 200px;" class="q-mx-md" />
+            <q-img
+              src="public/img/Foto Nossos serviços.svg"
+              style="max-width: 200px"
+              class="q-mx-md"
+            />
           </div>
 
           <!-- Informações da empresa -->
           <div class="col-8 text-left">
-            <h3 class="text-center text-bold q-mb-lg" style="background-color: #282727; border-radius: 10px;">SOBRE A
-              EMPRESA</h3>
+            <h3
+              class="text-center text-bold q-mb-lg"
+              style="background-color: #282727; border-radius: 10px"
+            >
+              SOBRE A EMPRESA
+            </h3>
             <h5 class="text-center text-bold q-mt-md q-mb-lg">PERRI ENGENHARIA E CONSTRUÇÃO</h5>
             <p class="text-bold q-mb-md">
-              Com experiência no mercado de engenharia e construção, a Perri Engenharia e Construção se destaca pela
-              excelência em serviços técnicos especializados. Oferecemos soluções inovadoras e eficientes, atendendo às
-              necessidades de nossos clientes com qualidade e profissionalismo.
+              Com experiência no mercado de engenharia e construção, a Perri Engenharia e Construção
+              se destaca pela excelência em serviços técnicos especializados. Oferecemos soluções
+              inovadoras e eficientes, atendendo às necessidades de nossos clientes com qualidade e
+              profissionalismo.
             </p>
             <p class="text- q-mb-md">
-              Desde o acompanhamento de obras até a consultoria técnica para a obtenção de chaves, garantimos o
-              cumprimento das normas vigentes. Também damos suporte a administradores de condomínios, auxiliando na
-              verificação de ARTs e na coordenação de projetos, construção e reformas. Agradecemos por considerar a
-              Perri Engenharia e Construção como seu parceiro de confiança.
+              Desde o acompanhamento de obras até a consultoria técnica para a obtenção de chaves,
+              garantimos o cumprimento das normas vigentes. Também damos suporte a administradores
+              de condomínios, auxiliando na verificação de ARTs e na coordenação de projetos,
+              construção e reformas. Agradecemos por considerar a Perri Engenharia e Construção como
+              seu parceiro de confiança.
             </p>
           </div>
         </div>
       </div>
 
       <!-- Seção: Solicite um Orçamento -->
-      <div class="full-width" style="position: relative; height: 400px;">
-        <!-- Imagem de Fundo -->
-        <q-img src="public/img/Group 3.svg" class="full-background-img" />
-        <!-- Conteúdo sobre a imagem -->
-        <div class="text-center" style="max-width: 800px; z-index: 2; position: relative;">
-          <p class="q-mb-lg">
-            Solicite um orçamento e descubra como podemos transformar suas ideias em realidade. Com dedicação, expertise
-            e
-            um compromisso inabalável com a excelência, garantimos soluções seguras, de alta qualidade e personalizadas
-            para suas necessidades. Confie em quem entende do assunto e escolha construir com confiança.
-          </p>
-          <q-btn label="SOLICITAR ORÇAMENTO" color="primary" class="q-my-lg text-bold"
-            style="padding: 10px 20px; font-size: 1.2em;" />
-        </div>
+      <div class="orcamento row justify-center q-pa-md">
+        <q-img :src="'/img/Group 3.svg'" class="rounded-borders" style="width: 100vw; height: 80vh">
+          <div class="absolute-center text-center q-pa-md bg-transparent">
+            <div class="text-subtitle2 text-weight-bolder">
+              Solicite um orçamento e descubra como podemos transformar suas ideias em realidade.
+              Com dedicação, expertise e um compromisso inabalável com a excelência, garantimos
+              soluções seguras, de alta qualidade e personalizadas para suas necessidades. Confie em
+              quem entende do assunto e escolha construir com confiança.
+            </div>
+            <q-btn
+              label="Solicitar Orçamento"
+              to="/servicos"
+              color="accent"
+              class="q-mt-md"
+              outline
+            />
+          </div>
+        </q-img>
       </div>
     </section>
   </q-page>
@@ -147,7 +174,6 @@ const goTo = (id: string | number) => {
   return router.push({ path: `services/${id}`, replace: true })
 }
 </script>
-
 
 <style scoped>
 .bg-dark {
