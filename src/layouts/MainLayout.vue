@@ -36,50 +36,62 @@ const openDrawer = ref<boolean>(false)
       <router-view />
     </q-page-container>
 
-    <footer class="bg-dark text-white q-mt-xl" style="z-index: 999">
-      <div class="q-pa-md">
-        <div class="row justify-between">
-          <!-- Logo e Direitos Autorais -->
-          <div class="col-3">
-            <div>
-              <img src="/logo.png" alt="Logo" style="width: 50px;" />
+    <footer class="bg-dark text-white q-mt-xl q-pa-md" style="z-index: 999">
+      <div class="row justify-between items-start q-col-gutter-md">
+        <!-- Logo e Direitos Autorais -->
+        <div class="col-xs-12 col-sm-3 flex column items-start">
+          <q-img src="/logo.png" alt="Logo" width="50px" class="q-mb-sm" />
+          <p class="text-caption">&copy; <strong>{{ new Date().getFullYear() }}</strong> Perri Engenharia. Todos os direitos reservados.</p>
+        </div>
+
+        <!-- Links Úteis -->
+        <div class="col-xs-6 col-sm-3">
+          <q-list dense>
+            <q-item-label header>Links Úteis</q-item-label>
+            <q-item clickable tag="a" href="/">
+              <q-item-section>Início</q-item-section>
+            </q-item>
+            <q-item clickable tag="a" href="/servicos">
+              <q-item-section>Serviços</q-item-section>
+            </q-item>
+            <q-item clickable tag="a" href="/sobre">
+              <q-item-section>Sobre Nós</q-item-section>
+            </q-item>
+            <q-item clickable tag="a" href="/contato">
+              <q-item-section>Contato</q-item-section>
+            </q-item>
+          </q-list>
+        </div>
+
+        <!-- Informações -->
+        <div class="col-xs-6 col-sm-3">
+          <q-list dense>
+            <q-item-label header>Informações</q-item-label>
+            <q-item clickable tag="a" href="/localizacao">
+              <q-item-section>Localização</q-item-section>
+            </q-item>
+            <q-item clickable tag="a" href="/atendimento">
+              <q-item-section>Horários de Atendimento</q-item-section>
+            </q-item>
+            <q-item clickable tag="a" href="/faq">
+              <q-item-section>FAQ</q-item-section>
+            </q-item>
+            <q-item clickable tag="a" href="/privacidade">
+              <q-item-section>Política de Privacidade</q-item-section>
+            </q-item>
+          </q-list>
+        </div>
+
+        <!-- Redes Sociais -->
+        <div class="col-xs-12 col-sm-3">
+          <q-list dense>
+            <q-item-label header>Siga-nos</q-item-label>
+            <div class="row q-gutter-sm">
+              <q-btn flat round dense icon="mdi-facebook" href="#" class="text-white" />
+              <q-btn flat round dense icon="mdi-instagram" href="#" class="text-white" />
+              <q-btn flat round dense icon="mdi-youtube" href="#" class="text-white" />
             </div>
-            <p class="text-caption">
-              &copy; 2025 Perri Engenharia. Todos os direitos reservados.
-            </p>
-          </div>
-
-          <!-- Links Úteis -->
-          <div class="col-3">
-            <h6>Links Úteis</h6>
-            <ul>
-              <li><a href="/" class="text-white">Início</a></li>
-              <li><a href="/servicos" class="text-white">Serviços</a></li>
-              <li><a href="/sobre" class="text-white">Sobre Nós</a></li>
-              <li><a href="/contato" class="text-white">Contato</a></li>
-            </ul>
-          </div>
-
-          <!-- Informações -->
-          <div class="col-3">
-            <h6>Informações</h6>
-            <ul>
-              <li><a href="/localizacao" class="text-white">Localização</a></li>
-              <li><a href="/atendimento" class="text-white">Horários de Atendimento</a></li>
-              <li><a href="/faq" class="text-white">FAQ</a></li>
-              <li><a href="/privacidade" class="text-white">Política de Privacidade</a></li>
-            </ul>
-          </div>
-
-          <!-- Redes Sociais -->
-          <div class="col-3">
-            <h6>Siga-nos</h6>
-            <ul class="social-links">
-              <li><a href="#" class="text-white">Facebook</a></li>
-              <li><a href="#" class="text-white">Instagram</a></li>
-              <li><a href="#" class="text-white">YouTube</a></li>
-            </ul>
-          </div>
+          </q-list>
         </div>
       </div>
     </footer>
