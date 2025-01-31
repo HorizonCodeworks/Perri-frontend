@@ -91,17 +91,18 @@
     </main>
 
     <section>
-      <div class="q-pa-lg row q-gutter-md items-center">
+      <div class="q-pa-lg row items-center">
         <!-- Logotipo -->
-        <div class="col-xs-12 col-sm-4 flex flex-center">
+        <div class="col-xs-12 col-sm-4 col-md-6 flex flex-center">
           <q-img
             src="public/img/Foto Nossos serviços.svg"
             class="q-mx-md"
+            style="max-width: 400px;"
           />
         </div>
 
         <!-- Informações da empresa -->
-        <div class="col-xs-12 col-sm-7 bg-secondary">
+        <div class="col-xs-12 col-sm-7 col-md-6 bg-secondary">
           <q-card class="q-pa-md bg-dark">
             <q-card-section class="text-center">
               <div class="text-h4 text-bold">SOBRE A EMPRESA</div>
@@ -111,14 +112,14 @@
               <div class="text-h5 text-weight-medium">PERRI ENGENHARIA E CONSTRUÇÃO</div>
             </q-card-section>
 
-            <q-card-section class="text-body1">
+            <q-card-section class="text-h5 text-center">
               Com experiência no mercado de engenharia e construção, a Perri Engenharia e Construção
               se destaca pela excelência em serviços técnicos especializados. Oferecemos soluções
               inovadoras e eficientes, atendendo às necessidades de nossos clientes com qualidade e
               profissionalismo.
             </q-card-section>
 
-            <q-card-section class="text-body1">
+            <q-card-section class="text-h5 text-center">
               Desde o acompanhamento de obras até a consultoria técnica para a obtenção de chaves,
               garantimos o cumprimento das normas vigentes. Também damos suporte a administradores
               de condomínios, auxiliando na verificação de ARTs e na coordenação de projetos,
