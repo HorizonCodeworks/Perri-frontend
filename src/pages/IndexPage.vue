@@ -55,7 +55,7 @@
       </div>
     </section>
 
-    <main class="q-mb-md q-pa-md" style="margin-top: 100px">
+    <main class="q-mb-xl q-pa-md" style="margin-top: 100px">
       <div class="text-h3 text-white q-mt-lg q-mb-xl q-pa-md text-center">Portfólio</div>
       <section class="full-width row justify-around items-center flex-wrap q-gutter-lg">
         <CardComponent
@@ -67,27 +67,6 @@
           @click="goTo(i.id)"
         />
       </section>
-
-      <!-- Projetos 3D -->
-      <section class="q-mt-xl q-mb-xl" style="margin-top: 100px">
-        <div class="row justify-center q-mb-lg">
-          <div class="text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm">
-            Projetos 3D
-          </div>
-        </div>
-        <div class="row q-gutter-md justify-around">
-          <CardComponent v-for="n in 4" :key="n" class="col-12 col-md-5 col-lg-3 shadow-2xl" />
-        </div>
-
-        <div class="row justify-center q-mt-xl q-mb-lg" style="margin-top: 100px">
-          <div class="text-h4 text-weight-bold text-white bg-secondary rounded-borders q-pa-sm">
-            Construções e reformas
-          </div>
-        </div>
-        <div class="row q-gutter-md justify-around">
-          <CardComponent v-for="n in 4" :key="n" class="col-12 col-md-5 col-lg-3 shadow-2xl" />
-        </div>
-      </section>
     </main>
 
     <section>
@@ -95,7 +74,7 @@
         <!-- Logotipo -->
         <div class="col-xs-12 col-sm-4 col-md-6 flex flex-center">
           <q-img
-            src="public/img/Foto Nossos serviços.svg"
+            src="img/Foto Nossos serviços.svg"
             class="q-mx-md"
             style="max-width: 400px;"
           />
@@ -183,7 +162,7 @@ const goTo = (id: string | number) => {
 
 <style scoped>
 .hero-section {
-  background: url('public/img/HeroSection.svg') center center / cover no-repeat;
+  background: url('img/HeroSection.svg') center center / cover no-repeat;
   height: 80vh;
   display: flex;
   justify-content: center;
