@@ -69,15 +69,18 @@
       </section>
     </main>
 
+    <!--carousel-->
+    <div>
+      <div class="text-h2 text-center bg-dark">Serviços</div>
+      <CarouselComponent />
+      <!-- Aqui chamamos o componente -->
+    </div>
+
     <section>
       <div class="q-pa-lg row items-center">
         <!-- Logotipo -->
         <div class="col-xs-12 col-sm-4 col-md-6 flex flex-center">
-          <q-img
-            src="img/Foto Nossos serviços.svg"
-            class="q-mx-md"
-            style="max-width: 400px;"
-          />
+          <q-img src="img/Foto Nossos serviços.svg" class="q-mx-md" style="max-width: 400px" />
         </div>
 
         <!-- Informações da empresa -->
@@ -106,7 +109,7 @@
             </q-card-section>
 
             <q-card-section class="text-center q-mt-md">
-              <q-btn label="Saiba Mais" color="accent" rounded style="width: 250px;"/>
+              <q-btn label="Saiba Mais" color="accent" rounded style="width: 250px" />
             </q-card-section>
           </q-card>
         </div>
@@ -137,6 +140,7 @@
 </template>
 
 <script setup lang="ts">
+import CarouselComponent from 'src/components/CarouselComponent.vue'
 import CardComponent from 'src/components/Basic/CardComponent.vue'
 import { card_teste } from './IndexConfigs/CardConfig'
 import { ServicesConfig } from './IndexConfigs/ServicesConfig'
