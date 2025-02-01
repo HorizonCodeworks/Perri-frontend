@@ -2,6 +2,7 @@
 import { tabs } from './options/TabOptions'
 import { ref } from 'vue'
 const openDrawer = ref<boolean>(false)
+const wame = import.meta.env.VITE_WAME
 </script>
 <template>
   <q-layout view="lHh Lpr lFf">
@@ -17,8 +18,15 @@ const openDrawer = ref<boolean>(false)
         </q-tabs>
         <q-space />
         <div class="row items-center justify-center">
-          <q-icon name="fa-brands fa-whatsapp" class="q-mr-md cursor-pointer" size="25px" />
-          <q-icon name="fa-brands fa-instagram" class="q-mr-md cursor-pointer" size="25px" />
+          <q-btn
+            fab
+            icon="fa-brands fa-whatsapp"
+            class="q-mr-md cursor-pointer"
+            size="15px"
+            :href="wame"
+            target="_blank"
+          />
+          <q-btn fab icon="fa-brands fa-instagram" class="q-mr-md cursor-pointer" size="15px" />
         </div>
       </q-toolbar>
 
@@ -41,7 +49,10 @@ const openDrawer = ref<boolean>(false)
         <!-- Logo e Direitos Autorais -->
         <div class="col-xs-12 col-sm-3 flex column items-start">
           <q-img src="/logo.png" alt="Logo" width="50px" class="q-mb-sm" />
-          <p class="text-caption">&copy; <strong>{{ new Date().getFullYear() }}</strong> Perri Engenharia. Todos os direitos reservados.</p>
+          <p class="text-caption">
+            &copy; <strong>{{ new Date().getFullYear() }}</strong> Perri Engenharia. Todos os
+            direitos reservados.
+          </p>
         </div>
 
         <!-- Links Úteis -->

@@ -22,7 +22,7 @@
 
     <!-- icon floating on left side of the page -->
     <q-page-sticky position="bottom-left" :offset="[18, 18]" style="z-index: 999">
-      <q-btn fab icon="fa-brands fa-whatsapp" color="green" />
+      <q-btn fab icon="fa-brands fa-whatsapp" color="green" :href="wame" target="_blank" />
     </q-page-sticky>
 
     <div class="text-h2 text-white q-mt-lg q-pa-md text-weight-bolder">Serviços</div>
@@ -73,7 +73,6 @@
     <div>
       <div class="text-h2 text-center bg-dark">Serviços</div>
       <CarouselComponent />
-      <!-- Aqui chamamos o componente -->
     </div>
 
     <section>
@@ -147,6 +146,8 @@ import { ServicesConfig } from './IndexConfigs/ServicesConfig'
 import type { IIcons } from 'src/interfaces/IIcons'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
+
+const wame = import.meta.env.VITE_WAME;
 
 const router = useRouter()
 
