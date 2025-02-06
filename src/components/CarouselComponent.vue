@@ -1,21 +1,21 @@
 <template>
   <div class="q-pa-md">
-    <q-carousel v-model="slide" arrows animated height="400px">
-      <q-carousel-slide name="first" img-src="https://cdn.quasar.dev/img/mountains.jpg">
+    <q-carousel v-model="slide" arrows animated height="650px">
+      <q-carousel-slide name="first" img-src="img/Obra-jed1.jpeg">
         <div class="absolute-bottom custom-caption">
-          <div class="text-h2">First stop</div>
+          <div class="text-h2">Inicio Piscina </div>
         </div>
       </q-carousel-slide>
 
-      <q-carousel-slide name="second" img-src="https://cdn.quasar.dev/img/parallax1.jpg">
+      <q-carousel-slide name="second" img-src="img/Obra-jed2.jpeg">
         <div class="absolute-bottom custom-caption">
-          <div class="text-h2">Second stop</div>
+          <div class="text-h2">Durante Piscina </div>
         </div>
       </q-carousel-slide>
 
-      <q-carousel-slide name="third" img-src="https://cdn.quasar.dev/img/parallax2.jpg">
+      <q-carousel-slide name="third" img-src="img/Obra-jed3.jpeg">
         <div class="absolute-bottom custom-caption">
-          <div class="text-h2">Third stop</div>
+          <div class="text-h2">Final Piscina </div>
         </div>
       </q-carousel-slide>
     </q-carousel>

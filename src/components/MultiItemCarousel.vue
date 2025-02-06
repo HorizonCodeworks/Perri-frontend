@@ -25,7 +25,7 @@ import { computed, ref } from 'vue'
 //     type: Array<any>
 //   }
 // })
-const items = ref(['Sl9ide 1', 'Slide 2', 'Slide 3', 'Slide 4', 'Slide 5', 'Slide 6'])
+const items = ref(['Slide 1', 'Slide 2', 'Slide 3', 'Slide 4', 'Slide 5', 'Slide 6'])
 const currentIndex = ref(0)
 const visibleItems = ref(3)
 

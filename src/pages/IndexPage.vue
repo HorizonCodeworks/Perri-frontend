@@ -6,15 +6,28 @@
       <div class="full-width">
         <div class="text-center q-my-xl q-pa-lg">
           <!-- Título principal -->
-          <div class="text-h2 text-center">Perri Construções</div>
+          <div class="text-h1 text-center">Perri Construções</div>
           <!-- Subtítulo -->
-          <div class="text-body1 q-mb-md">Construindo Sonhos</div>
+          <div class="text-h2 q-mb-md">Construindo Sonhos</div>
           <!-- Contêiner para os botões -->
           <div class="row justify-center" id="services">
             <!-- Botão "Serviços" com link para a página de serviços -->
-            <q-btn label="Serviços" to="/servicos" color="accent" class="q-mr-sm" rounded />
+            <q-btn
+              label="Serviços"
+              to="/services"
+              color="accent"
+              class="q-mr-sm"
+              rounded
+              style="width: 150px; height: 40px"
+            />
             <!-- Botão "Solicitar Orçamento" com link para a página de orçamento -->
-            <q-btn label="Solicitar Orçamento" to="/orcamento" color="accent" rounded />
+            <q-btn
+              label="Solicitar Orçamento"
+              to="/orcamento"
+              color="accent"
+              rounded
+              :href="wame"
+            />
           </div>
         </div>
       </div>
@@ -25,7 +38,7 @@
       <q-btn fab icon="fa-brands fa-whatsapp" color="green" :href="wame" target="_blank" />
     </q-page-sticky>
 
-    <div class="text-h2 text-white q-mt-lg q-pa-md text-weight-bolder">Serviços</div>
+    <div class="text-h2 text-white q-mt-lg q-pa-md text-weight-bolder">Nossos Serviços</div>
     <section class="full-width bg-secondary row justify-around items-center q-pa-xl">
       <div class="column items-center text-center q-mx-md" v-for="i in ServicesConfig" :key="i.id">
         <q-btn
@@ -46,7 +59,7 @@
       <div class="col-12 col-md-6 text-white q-pa-lg flex flex-center flex-column">
         <div class="text-h3 text-center">{{ content?.content.title }}</div>
         <br />
-        <div class="text-h5 text-center q-mt-md">
+        <div class="text-h5 text-start q-mt-md">
           {{ content?.content.textExplanation }}
         </div>
       </div>
@@ -130,6 +143,7 @@
               color="accent"
               class="q-mt-md"
               rounded
+              :href="wame"
             />
           </div>
         </q-img>
@@ -147,7 +161,7 @@ import type { IIcons } from 'src/interfaces/IIcons'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 
-const wame = import.meta.env.VITE_WAME;
+const wame = import.meta.env.VITE_WAME
 
 const router = useRouter()
 

@@ -9,8 +9,9 @@ const wame = import.meta.env.VITE_WAME
     <q-header elevated class="q-pa-xs">
       <q-toolbar class="full-width row wrap justify-center items-center content-center gt-sm">
         <q-toolbar-title>
-          <q-avatar size="70px">
-            <img src="../assets/Logo.png" alt="" srcset="" />
+          <q-avatar size="50px">
+            <img src="img/nv-logo.2.png" alt="" srcset=""
+            />
           </q-avatar>
         </q-toolbar-title>
         <q-tabs align="left" class="rounded-md q-pa-sm">
@@ -26,7 +27,7 @@ const wame = import.meta.env.VITE_WAME
             :href="wame"
             target="_blank"
           />
-          <q-btn fab icon="fa-brands fa-instagram" class="q-mr-md cursor-pointer" size="15px" />
+          <q-btn fab icon="fa-brands fa-instagram" class="q-mr-md cursor-pointer" size="15px" href="https://www.instagram.com/perri_engenharia?igsh=MWpkaTl1Z2sxaThsaQ=="/>
         </div>
       </q-toolbar>
 
@@ -98,9 +99,9 @@ const wame = import.meta.env.VITE_WAME
           <q-list dense>
             <q-item-label header>Siga-nos</q-item-label>
             <div class="row q-gutter-sm">
-              <q-btn flat round dense icon="mdi-facebook" href="#" class="text-white" />
-              <q-btn flat round dense icon="mdi-instagram" href="#" class="text-white" />
-              <q-btn flat round dense icon="mdi-youtube" href="#" class="text-white" />
+              <q-btn flat round dense icon="mdi-facebook" href="https://www.facebook.com/perri.engenharia" class="text-white" />
+              <q-btn flat round dense icon="mdi-instagram" href="https://www.instagram.com/perri_engenharia?igsh=MWpkaTl1Z2sxaThsaQ==" class="text-white" />
+              <q-btn flat round dense icon="mdi-youtube" href="https://youtube.com/@perriconstrucao?si=J4JTevWa3rMeVccX" class="text-white" />
             </div>
           </q-list>
         </div>
