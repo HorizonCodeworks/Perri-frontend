@@ -34,8 +34,8 @@
     </div>
 
     <!-- icon floating on left side of the page -->
-    <q-page-sticky position="bottom-left" :offset="[18, 18]" style="z-index: 999">
-      <q-btn fab icon="fa-brands fa-whatsapp" color="green" :href="wame" target="_blank" />
+    <q-page-sticky position="bottom-right" :offset="[18, 18]" style="z-index: 999">
+      <q-btn fab icon="fa-brands fa-whatsapp" color="green" :href="wame" target="_blank"/>
     </q-page-sticky>
 
     <div class="text-h2 text-white q-mt-lg q-pa-md text-weight-bolder">Nossos Serviços</div>
@@ -181,7 +181,7 @@ const goTo = (id: string | number) => {
 
 <style scoped>
 .hero-section {
-  background: url('img/HeroSection.svg') center center / cover no-repeat;
+  background: url('img/HeroSection.jpeg') center center / cover no-repeat;
   height: 80vh;
   display: flex;
   justify-content: center;
