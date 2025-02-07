@@ -2,36 +2,22 @@
   <q-page class="text-white">
     <!-- Nova seção com imagem, título e botões -->
     <div class="hero-section">
-      <!-- Overlay para adicionar o efeito escuro sobre a imagem -->
-      <div class="full-width">
-        <div class="text-center q-my-xl q-pa-lg">
+    <q-img src="img/HeroSection.jpeg" class="full-width full-height">
+      <div class="absolute-full bg-transparenty flex flex-center text-white text-center q-pa-md">
+        <div class="q-mx-auto">
           <!-- Título principal -->
-          <div class="text-h1 text-center">Perri Construções</div>
+          <div class="title">Perri Construções</div>
           <!-- Subtítulo -->
-          <div class="text-h2 q-mb-md">Construindo Sonhos</div>
-          <!-- Contêiner para os botões -->
-          <div class="row justify-center" id="services">
-            <!-- Botão "Serviços" com link para a página de serviços -->
-            <q-btn
-              label="Serviços"
-              to="/services"
-              color="accent"
-              class="q-mr-sm"
-              rounded
-              style="width: 150px; height: 40px"
-            />
-            <!-- Botão "Solicitar Orçamento" com link para a página de orçamento -->
-            <q-btn
-              label="Solicitar Orçamento"
-              to="/orcamento"
-              color="accent"
-              rounded
-              :href="wame"
-            />
+          <div class="subtitle">Construindo Sonhos</div>
+          <!-- Botões -->
+          <div class="row justify-center q-gutter-sm">
+            <q-btn label="Serviços" to="/services" color="accent" rounded class="btn-size" />
+            <q-btn label="Solicitar Orçamento" :href="wame" color="accent" rounded class="btn-size" />
           </div>
         </div>
       </div>
-    </div>
+    </q-img>
+  </div>
 
     <!-- icon floating on left side of the page -->
     <q-page-sticky position="bottom-right" :offset="[18, 18]" style="z-index: 999">
@@ -70,7 +56,7 @@
 
     <main class="q-mb-xl q-pa-md" style="margin-top: 100px">
       <div class="text-h3 text-white q-mt-lg q-mb-xl q-pa-md text-center">Portfólio</div>
-      <section class="full-width row justify-around items-center flex-wrap q-gutter-lg">
+      <section class="full-width row justify-around items-center flex-wrap q-gutter-y-lg">
         <CardComponent
           v-for="(i, index) in card_teste"
           :key="index"
@@ -92,7 +78,7 @@
       <div class="q-pa-lg row items-center">
         <!-- Logotipo -->
         <div class="col-xs-12 col-sm-4 col-md-6 flex flex-center">
-          <q-img src="img/Foto Nossos serviços.svg" class="q-mx-md" style="max-width: 400px" />
+          <q-img src="img/img-NossosServicos.svg" class="q-mx-md q-mb-md" style="max-width: 400px" />
         </div>
 
         <!-- Informações da empresa -->
@@ -181,12 +167,22 @@ const goTo = (id: string | number) => {
 
 <style scoped>
 .hero-section {
-  background: url('img/HeroSection.jpeg') center center / cover no-repeat;
   height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   color: white;
+}
+
+.title {
+  font-size: clamp(1.8rem, 5vw, 4rem); /* Ajusta entre 1.8rem (pequeno) e 4rem (grande) */
+  font-weight: bold;
+}
+
+/* Subtítulo flexível */
+.subtitle {
+  font-size: clamp(1.2rem, 3vw, 2.5rem); /* Ajusta entre 1.2rem e 2.5rem */
+  margin-bottom: 1rem;
 }
 </style>
