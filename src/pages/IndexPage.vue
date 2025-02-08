@@ -2,26 +2,35 @@
   <q-page class="text-white">
     <!-- Nova seção com imagem, título e botões -->
     <div class="hero-section">
-    <q-img src="img/HeroSection.jpeg" class="full-width full-height">
-      <div class="absolute-full bg-transparenty flex flex-center text-white text-center q-pa-md">
-        <div class="q-mx-auto">
-          <!-- Título principal -->
-          <div class="title">Perri Construções</div>
-          <!-- Subtítulo -->
-          <div class="subtitle">Construindo Sonhos</div>
-          <!-- Botões -->
-          <div class="row justify-center q-gutter-sm">
-            <q-btn label="Serviços" to="/services" color="accent" rounded class="btn-size" />
-            <q-btn label="Solicitar Orçamento" :href="wame" color="accent" rounded class="btn-size" />
+      <q-img src="img/HeroSection.jpeg" class="full-width full-height">
+        <div class="absolute-full bg-transparent flex flex-center text-white text-center q-pa-md">
+          <div class="q-mx-auto">
+            <!-- Título principal -->
+             <div>
+              <img src="img/nv-logo.2.png" class="q-pb-none"/>
+             </div>
+            <div class="title">Perri Construções</div>
+            <!-- Subtítulo -->
+            <div class="subtitle">Construindo Sonhos</div>
+            <!-- Botões -->
+            <div class="row justify-center q-gutter-sm">
+              <q-btn label="Serviços" to="/services" color="accent" rounded class="btn-size" />
+              <q-btn
+                label="Solicitar Orçamento"
+                :href="wame"
+                color="accent"
+                rounded
+                class="btn-size"
+              />
+            </div>
           </div>
         </div>
-      </div>
-    </q-img>
-  </div>
+      </q-img>
+    </div>
 
     <!-- icon floating on left side of the page -->
     <q-page-sticky position="bottom-right" :offset="[18, 18]" style="z-index: 999">
-      <q-btn fab icon="fa-brands fa-whatsapp" color="green" :href="wame" target="_blank"/>
+      <q-btn fab icon="fa-brands fa-whatsapp" color="green" :href="wame" target="_blank" />
     </q-page-sticky>
 
     <div class="text-h2 text-white q-mt-lg q-pa-md text-weight-bolder">Nossos Serviços</div>
@@ -78,7 +87,11 @@
       <div class="q-pa-lg row items-center">
         <!-- Logotipo -->
         <div class="col-xs-12 col-sm-4 col-md-6 flex flex-center">
-          <q-img src="img/img-NossosServicos.svg" class="q-mx-md q-mb-md" style="max-width: 400px" />
+          <q-img
+            src="img/img-NossosServicos.svg"
+            class="q-mx-md q-mb-md"
+            style="max-width: 400px"
+          />
         </div>
 
         <!-- Informações da empresa -->
