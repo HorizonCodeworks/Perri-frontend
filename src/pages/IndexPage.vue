@@ -6,9 +6,9 @@
         <div class="absolute-full bg-transparent flex flex-center text-white text-center q-pa-md">
           <div class="q-mx-auto">
             <!-- Título principal -->
-             <div>
-              <img src="img/nv-logo.2.png" class="q-pb-none"/>
-             </div>
+            <div>
+              <img src="img/nv-logo.2.png" class="q-pb-none" />
+            </div>
             <div class="title">Perri Construções</div>
             <!-- Subtítulo -->
             <div class="subtitle">Construindo Sonhos</div>
@@ -17,7 +17,7 @@
               <q-btn label="Serviços" to="/services" color="accent" rounded class="btn-size" />
               <q-btn
                 label="Solicitar Orçamento"
-                :href="wame"
+                href="https://wa.me/5511954226136?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.%20Poderia%20me%20ajudar%20com%20mais%20detalhes?"
                 color="accent"
                 rounded
                 class="btn-size"
@@ -120,7 +120,7 @@
             </q-card-section>
 
             <q-card-section class="text-center q-mt-md">
-              <q-btn label="Saiba Mais" color="accent" rounded style="width: 250px" />
+              <q-btn label="Saiba Mais" color="accent" rounded style="width: 250px" to="about" />
             </q-card-section>
           </q-card>
         </div>
@@ -142,7 +142,7 @@
               color="accent"
               class="q-mt-md"
               rounded
-              :href="wame"
+              href="https://wa.me/5511954226136?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.%20Poderia%20me%20ajudar%20com%20mais%20detalhes?"
             />
           </div>
         </q-img>

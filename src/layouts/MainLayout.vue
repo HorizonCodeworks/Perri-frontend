@@ -2,7 +2,6 @@
 import { tabs } from './options/TabOptions'
 import { ref } from 'vue'
 const openDrawer = ref<boolean>(false)
-const wame = import.meta.env.VITE_WAME
 </script>
 <template>
   <q-layout view="lHh Lpr lFf">
@@ -24,7 +23,7 @@ const wame = import.meta.env.VITE_WAME
             icon="fa-brands fa-whatsapp"
             class="q-mr-md cursor-pointer"
             size="15px"
-            :href="wame"
+            href="//wa.me/5511954226136?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.%20Poderia%20me%20ajudar%20com%20mais%20detalhes?"
             target="_blank"
           />
           <q-btn fab icon="fa-brands fa-instagram" class="q-mr-md cursor-pointer" size="15px" href="https://www.instagram.com/perri_engenharia?igsh=MWpkaTl1Z2sxaThsaQ=="/>
@@ -63,7 +62,7 @@ const wame = import.meta.env.VITE_WAME
             <q-item clickable tag="a" href="/">
               <q-item-section>Início</q-item-section>
             </q-item>
-            <q-item clickable tag="a" href="/servicos">
+            <q-item clickable tag="a" href="/services">
               <q-item-section>Serviços</q-item-section>
             </q-item>
             <q-item clickable tag="a" href="/sobre">
